@@ -66,10 +66,31 @@ func _on_AreaBottom_body_entered(body):
 		$Textbox.hide()
 
 
+func _on_AreaBottom2_body_entered(body):
+	if body.is_in_group("players"):
+		$AreaBottom2.queue_free()
+		$Textbox.show("Test test test text that makes no sense?")
+		$Player.can_move = false
+		yield(get_tree().create_timer(text_delay), "timeout")
+		$Player.can_move = true
+
+
+func _on_AreaBottom3_body_entered(body):
+	if body.is_in_group("players"):
+		$AreaBottom3.queue_free()
+		$Textbox.hide()
 
 
 func _on_Npc00_body_entered(body):
 	if body.is_in_group("players"):
 		$Player.can_move = false
 		yield(get_tree().create_timer(text_delay), "timeout")
+		$Textbox.show("is this the end?")
+		yield(get_tree().create_timer(1.2), "timeout")
+		$Textbox.hide()
+		yield(get_tree().create_timer(text_delay), "timeout")
+		$Textbox.show("well see each other again...")
+		yield(get_tree().create_timer(1.2), "timeout")
+		$Textbox.hide()
 		Global.switch_scene(next_scene)
+
