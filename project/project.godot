@@ -28,6 +28,7 @@ _global_script_class_icons={
 
 config/name="Lost"
 run/main_scene="res://src/Game.tscn"
+boot_splash/bg_color=Color( 0.0117647, 0.0117647, 0.0117647, 1 )
 config/icon="res://assets/icon.png"
 
 [autoload]
@@ -75,4 +76,5 @@ ui_down={
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.0156863, 0.0156863, 0.0156863, 1 )
 environment/default_environment="res://default_env.tres"
